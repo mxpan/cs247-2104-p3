@@ -17,9 +17,17 @@ a {
   overflow-y: scroll;
   height: 100%;
 }
+#emoticons {
+  margin-bottom: 20px;
+}
+.emoti img {
+  margin-left: 3px;
+  margin-top: 14px;
+}
 .webcam {
   position: absolute;
   top: 0px;
+  margin: 0px;
 }
 #webcam_stream {
   position: absolute;
@@ -29,13 +37,6 @@ a {
 }
 #webcam_stream video {
   border: 2px solid #dcc;
-}
-#emoticons {
-  margin-bottom: 20px;
-}
-.emoti {
-  margin-right: 3px;
-  margin-top: 14px;
 }
 .circle {
   position: absolute;

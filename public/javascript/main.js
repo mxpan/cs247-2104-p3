@@ -78,11 +78,12 @@
       video.autoplay = true;
       video.controls = false; // optional
       video.loop = true;
-      video.width = 120;
+      video.width = 80;
+      video.height = 80;
 
       var source = document.createElement("source");
       source.src =  URL.createObjectURL(base64_to_blob(data.v));
-      source.type =  "video/webm";
+      source.type = "video/webm";
 
       video.appendChild(source);
 
@@ -90,7 +91,21 @@
       // var video = document.createElement("img");
       // video.src = URL.createObjectURL(base64_to_blob(data.v));
 
-      document.getElementById("conversation").appendChild(video);
+      //document.getElementById("conversation").appendChild(video);
+      var cam = document.createElement('div');
+      cam.className = "webcam_in_convo";
+
+      var cam_stream = document.createElement('div');
+      cam_stream.id = "webcam_stream";
+      cam_stream.appendChild(video);
+
+      cam.appendChild(cam_stream);
+
+      var circle = document.createElement('div');
+      circle.className = "circle";
+
+      cam.appendChild(circle);
+      document.getElementById("conversation").appendChild(cam);
     }
     // Scroll to the bottom every time we display a new message
     scroll_to_bottom(0);
